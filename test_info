@@ -1,0 +1,137 @@
+//Inputs
+def p4  () = (
+    skip;
+    111
+)  
+
+def p6  () = 
+    ( 1; ( 2; ( 3; ( 4; ( 5; ( 6; ( 7; ( 8; 9 ) ) ) ) ) ) ) )
+
+def p7  () =    
+    ( ( ( ( ( ( ( ( ( 1; 2 ); 3 ); 4 ); 5 ); 6 ); 7 ); 8 ); 9 ); 10 )
+
+def p13  () = (   
+    while 1 == 2 do
+    	  10
+    endwhile;  
+        20 )
+
+def p18  () = f ( 10 );
+
+def f ( x ) = (
+    while x >= 0 do
+        x := ( x-1 )
+    endwhile;   
+    x )
+    
+
+//Output Errors
+//
+//
+//
+//
+Evaluation of task2 for candidate anonymous.
+
+Successfully ran 0 tests of 5 (0.0%) tests.
+
+During execution of the test cases, the following problems were encountered.
+
+-------------------------------------------------
+
+Failure in task2/p4.txt. Expected result: 111, observed: 0.
+
+Generated code:
+
+p4_entry:
+	move $fp $sp
+	sw $ra 0($sp)
+	addiu $sp $sp -4
+	sw $a0 0($sp)
+	addiu $sp $sp -4
+
+ 
+
+-------------------------------------------------
+
+Failure in task2/p6.txt. Expected result: 9, observed: 0.
+
+Generated code:
+
+p6_entry:
+	move $fp $sp
+	sw $ra 0($sp)
+	addiu $sp $sp -4
+	sw $a0 0($sp)
+	addiu $sp $sp -4
+
+ 
+
+-------------------------------------------------
+
+Failure in task2/p7.txt. Expected result: 10, observed: 0.
+
+Generated code:
+
+p7_entry:
+	move $fp $sp
+	sw $ra 0($sp)
+	addiu $sp $sp -4
+	sw $a0 0($sp)
+	addiu $sp $sp -4
+
+ 
+
+-------------------------------------------------
+
+Failure in task2/p13.txt. Expected result: 20, observed: 0.
+
+Generated code:
+
+p13_entry:
+	move $fp $sp
+	sw $ra 0($sp)
+	addiu $sp $sp -4
+	sw $a0 0($sp)
+	addiu $sp $sp -4
+
+ 
+
+-------------------------------------------------
+
+Failure in task2/p18.txt. Expected result: -1, observed: 10.
+
+Generated code:
+
+p18_entry:
+	move $fp $sp
+	sw $ra 0($sp)
+	addiu $sp $sp -4
+	sw $fp 0($sp)
+	addiu $sp $sp -4
+	li $a0 10
+	sw $a0 0($sp)
+	addiu $sp $sp -4
+	jal f_entry
+	lw $ra 4($sp)
+	addiu $sp $sp 8
+	lw $fp 0($sp)
+	jr $ra
+f_entry:
+	move $fp $sp
+	sw $ra 0($sp)
+	addiu $sp $sp -4
+	sw $a0 0($sp)
+	addiu $sp $sp -4
+
+ 
+
+
+//Example expected output
+
+p4_entry:
+	move $fp $sp
+	sw $ra 0($sp)
+	addiu $sp $sp -4
+	sw $a0 0($sp)
+	addiu $sp $sp -4
+  li $a0 111
