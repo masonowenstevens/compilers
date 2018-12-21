@@ -1,3 +1,27 @@
+//Language
+PROG → DEC | DEC; PROG 
+DEC → def ID (VARDEC) = E
+VARDEC →  ε | VARDECNE 
+VARDECNE → ID | VARDECNE, ID 
+ID → ... (identifiers)
+INT → ... (Integers)
+E →  INT 
+  | ID 
+  | if E COMP E then E else E endif
+  | (E BINOP E)
+  | (E)
+  | skip
+  | (E; E)
+  | while E COMP E do E endwhile
+  | repeat E until E COMP E endrepeat
+  | ID := E
+  | ID(ARGS)
+  | break
+  | continue
+ARGS → ε | ARGSNE
+ARGSNE → E | ARGSNE, E
+COMP → == | < | > | <= | >=
+
 //Inputs
 def p4  () = (
     skip;
@@ -135,3 +159,7 @@ p4_entry:
 	sw $a0 0($sp)
 	addiu $sp $sp -4
   li $a0 111
+  
+  
+  
+ 
